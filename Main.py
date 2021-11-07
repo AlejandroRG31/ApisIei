@@ -17,7 +17,7 @@ class Valencia(Resource):
 class EuskadiJson(Resource):
     def get(self):
         with open('bibliotecas.json', encoding="utf8") as json_file:
-            data = json.load(json_file, encoding="utf8")
+            data = json.load(json_file)
         
             return {'data': data}, 200  # return data and 200 OK code
 
