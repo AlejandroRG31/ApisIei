@@ -14,7 +14,7 @@ class Valencia(Resource):
                 data.append(rows)
             return {'data': data}, 200
 
-class Vascos(Resource):
+class EuskadiJson(Resource):
     def get(self):
         with open('bibliotecas.json', encoding="utf8") as json_file:
             data = json.load(json_file, encoding="utf8")
@@ -22,7 +22,7 @@ class Vascos(Resource):
             return {'data': data}, 200  # return data and 200 OK code
 
 
-class Indepes(Resource):
+class CatJson(Resource):
     def get(self):
         with open('biblioteques.xml', 'r', encoding="utf8") as myfile:
             data = []
@@ -31,8 +31,8 @@ class Indepes(Resource):
             return {'data': obj["response"]["row"]}, 200
 
 api.add_resource(Valencia, '/valencia')  # '/valencia' is our entry point for Valencia
-api.add_resource(Vascos, '/vascos')  # '/vascos' is our entry point for Vascos
-api.add_resource(Indepes, '/indepes')  # '/indepes' is our entry point for Indepes
+api.add_resource(EuskadiJson, '/euskadiJson')  # '/euskadiJson' is our entry point for EuskadiJson
+api.add_resource(CatJson, '/catJson')  # '/catJson' is our entry point for CatJson
 
 if __name__ == '__main__':
     app.run()  # run our Flask app
