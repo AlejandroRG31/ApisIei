@@ -25,10 +25,11 @@ class EuskadiJson(Resource):
 class CatJson(Resource):
     def get(self):
         with open('biblioteques.xml', 'r', encoding="utf8") as myfile:
-            data = []
-            obj = xmltodict.parse(myfile.read())
+            #data = []
+            #obj = xmltodict.parse(myfile.read())
 
-            return {'data': obj["response"]["row"]}, 200
+            #return {'data': obj["response"]["row"]}, 200
+            return {'data': myfile.read()}, 200
 
 api.add_resource(Valencia, '/valencia')  # '/valencia' is our entry point for Valencia
 api.add_resource(EuskadiJson, '/euskadiJson')  # '/euskadiJson' is our entry point for EuskadiJson
