@@ -9,10 +9,10 @@ class Valencia(Resource):
     def get(self):
         data = []
         with open("directorio-de-bibliotecas-valencianas_2020.csv", encoding="utf8") as csvFile:
-            csvReader = csv.DictReader(csvFile, delimiter=';')
-            for rows in csvReader:
-                data.append(rows)
-            return {'data': data}, 200
+            #csvReader = csv.DictReader(csvFile, delimiter=';')
+            #for rows in csvReader:
+                #data.append(rows)
+            return {'data': csvFile.read()}, 200
 
 class EuskadiJson(Resource):
     def get(self):
