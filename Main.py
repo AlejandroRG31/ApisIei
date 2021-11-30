@@ -8,7 +8,8 @@ api = Api(app)
 class Valencia(Resource):
     def get(self):
         data = []
-        with open("directorio-de-bibliotecas-valencianas_2020.csv", encoding="utf8") as csvFile:
+        #with open("directorio-de-bibliotecas-valencianas_2020.csv", encoding="utf8") as csvFile:
+        with open("CV.csv", encoding="utf8") as csvFile:
             #csvReader = csv.DictReader(csvFile, delimiter=';')
             #for rows in csvReader:
                 #data.append(rows)
@@ -16,7 +17,8 @@ class Valencia(Resource):
 
 class EuskadiJson(Resource):
     def get(self):
-        with open('bibliotecas.json', encoding="utf8") as json_file:
+        #with open('bibliotecas.json', encoding="utf8") as json_file:
+        with open('EUS.json', encoding="utf8") as json_file:
             data = json.load(json_file)
         
             return {'data': data}, 200  # return data and 200 OK code
@@ -24,7 +26,8 @@ class EuskadiJson(Resource):
 
 class CatJson(Resource):
     def get(self):
-        with open('biblioteques.xml', 'r', encoding="utf8") as myfile:
+        #with open('biblioteques.xml', 'r', encoding="utf8") as myfile:
+        with open('CAT.xml', 'r', encoding="utf8") as myfile:
             #data = []
             #obj = xmltodict.parse(myfile.read())
 
